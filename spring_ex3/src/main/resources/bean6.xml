@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id = "piano" class = "di_sample6.Piano" />
+<bean id = "saxophone" class = "di_sample6.Saxophone" />
+<bean id = "one" class = "di_sample6.OneManBand1">
+	<property name = "instruments">
+		<map>
+			<entry key = "PIANO" value-ref = "piano" />
+			<entry key = "SAXOPHONE" value-ref = "saxophone" />
+			<entry key = "PIANO1" value-ref = "piano" />
+			<entry key = "SAXOPHONE1" value-ref = "saxophone" />
+			<!-- map : 키는 중복안됨, value는 중복 가능 -->
+		</map>
+	</property>
+</bean>
+
+</beans>

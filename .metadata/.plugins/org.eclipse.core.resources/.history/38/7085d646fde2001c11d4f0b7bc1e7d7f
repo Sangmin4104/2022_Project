@@ -1,0 +1,26 @@
+package com.example.project.contrller;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import com.example.project.dto.MemberVO;
+import com.example.project.service.MemberService;
+
+@Controller
+public class MemberController {
+
+	// 주입
+	@Inject
+	MemberService memberService;
+	
+	public String memberList(Model model) {
+		List<MemberVO> list = memberService.memberList();
+		model.addAttribute("list", list);
+		return "member/member_list";
+	}
+	
+}

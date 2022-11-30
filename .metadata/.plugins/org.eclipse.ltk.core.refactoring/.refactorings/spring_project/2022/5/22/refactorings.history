@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spring_project/src/main/resources/mappers/member.xml&apos; to &apos;memberMapper.xml&apos;" description="Rename resource &apos;member.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/mappers/member.xml" name="memberMapper.xml" stamp="1653634967311" updateReferences="true"/>
+</session>

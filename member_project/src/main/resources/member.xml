@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="memberDao" class="Dao.memberDaoImpl" />
+<bean id="memberRegisterService" class="Service.MemberRegisterServiceImpl">
+	<constructor-arg ref="memberDao"/>
+</bean>
+
+<bean id="memberPrinterService" class="Service.MemberPrinterServiceImpl"/>
+<bean id ="memberListPrinterService" class="Service.MemberListPrinterServiceImpl">
+	<constructor-arg ref="memberDao"/>
+	<constructor-arg ref="memberPrinterService"/>
+</bean>
+
+<bean id="changePasswordService" class="Service.ChangePaswordServiceImpl">
+	<constructor-arg ref="memberDao"/>
+</bean>
+
+<bean id="deleteService" class="Service.DeleteServiceImpl">
+	<constructor-arg ref="memberDao"/>
+</bean>
+
+
+<bean id ="memberUI" class="Ui.MemberUI">
+	<property name="memberRegisterService" ref="memberRegisterService"/>
+	<property name="memberListPrinterService" ref="memberListPrinterService"/>
+	<property name="changePasswordService" ref="changePasswordService"/>
+	<property name="deleteService" ref="deleteService"/>
+</bean>
+
+</beans>

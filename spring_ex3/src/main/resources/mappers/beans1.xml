@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- db연결 정보 : dataSource 복사해서 넣기 -->
+
+<!-- 데이터베이스 연결 빈으로 정의 -->
+	<bean id = "dataSource" 
+	  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+	<property name="url" value="jdbc:mysql://localhost:3306/test?serverTimezone=UTC"/>
+	<property name="username" value="root"/>
+	<property name="password" value="1234"/>
+	</bean>
+<!-- sessionFactory : db연결, 마이바티스환경설정, 매퍼 -->
+<bean id ="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+<property name="dataSource" ref="dataSource"></property>
+<property name="configLocation" value="classpath:mappers/mybatis-config.xml"></property>
+<property name="mapperLocations" value="classpath:mappers/*Mapper*.xml"></property>
+<!-- singrMapper.xml, aMapper.xml -->
+</bean>
+
+
+<!-- sqlSession : 세션 설정 -->
+<bean id = "sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+<constructor-arg ref="sqlSessionFactory"/>
+
+
+</bean>
+
+<!-- 내가 만든 클래스에 주입할 값 설정 -->
+<bean id ="ConnectionTest" class="mybatisExam.ConnectionTest">
+<constructor-arg ref="sqlSession"></constructor-arg>
+
+
+</bean>
+
+
+</beans>

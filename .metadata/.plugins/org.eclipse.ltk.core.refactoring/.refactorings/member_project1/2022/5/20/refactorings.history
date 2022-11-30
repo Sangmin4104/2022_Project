@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MemberDaoImpl.java&apos; to &apos;spring_ex3/src/main/java/mybatisExam&apos;&#x0D;&#x0A;- Original project: &apos;member_project1&apos;&#x0D;&#x0A;- Destination element: &apos;spring_ex3/src/main/java/mybatisExam&apos;&#x0D;&#x0A;- Original element: &apos;member.Dao.MemberDaoImpl.java&apos;" description="Copy compilation unit" destination="=spring_ex3/src\/main\/java&lt;mybatisExam" element1="/src\/main\/java&lt;member.Dao{MemberDaoImpl.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1652419391004" units="1" version="1.0"/>
+</session>

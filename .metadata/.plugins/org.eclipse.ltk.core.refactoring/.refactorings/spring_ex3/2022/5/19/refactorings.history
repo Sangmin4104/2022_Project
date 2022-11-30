@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;select.xml&apos; to &apos;select.xml&apos;&#x0D;&#x0A;- Original project: &apos;spring_ex3&apos;&#x0D;&#x0A;- Destination element: &apos;select.xml&apos;&#x0D;&#x0A;- Original element: &apos;select.xml&apos;" description="Copy file" element1="src/main/resources/select.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1651814118597" target="/spring_ex3/src/main/resources/select.xml" units="0" version="1.0"/>
+</session>

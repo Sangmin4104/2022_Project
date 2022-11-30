@@ -1,0 +1,15 @@
+1649835057807	Delete element
+1649835078670	Delete element
+1649835259467	Delete element
+1649835850264	Rename type 'MemberDao'
+1649835855551	Rename type 'MemberDaoImpl'
+1650001054734	Rename package 'Controller'
+1650001062473	Rename package 'Dao'
+1650001072258	Rename package 'Service'
+1650001077810	Rename package 'Dto'
+1650001082206	Rename package 'Ui'
+1650003369221	Rename type 'memberDao'
+1650003375692	Rename type 'memberDaoImpl'
+1650004621475	Rename package 'member.Dao'
+1650004647657	Rename package 'member.Ui'
+1650004656211	Rename package 'member.Dto'

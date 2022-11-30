@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+C:\Smin\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4010470828.index
+911207797.index
+2333131924.index
+111831542.index
+3897788352.index
+1039511161.index
+4143471572.index
+441984425.index
+216123597.index

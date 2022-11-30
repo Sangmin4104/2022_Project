@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="member_project1"/>
+<aop-project name="member_project"/>
+<aop-project name="spring_project"/>
+<aop-project name="spring_app"/>
+<aop-project name="web_mvc"/>
+<aop-project name="spring_ex1"/>
+<aop-project name="spring_ex2"/>
+<aop-project name="spring_ex3"/>
+</aop-reference-model>

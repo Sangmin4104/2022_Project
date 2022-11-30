@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bar" class="di_sample3.Bar"></bean>
+	<bean id="foo" class="di_sample3.Foo">
+		<property name="email" value="foo@aaa.com"></property>
+		<property name="bar" ref="bar"></property>
+	</bean>
+</beans>

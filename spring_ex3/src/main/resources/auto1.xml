@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 기존방식
+<bean id = "b" class = "di_auto1.TestB"/>
+<bean id = "c" class = "di_auto1.TestC"/>
+<bean id = "a" class = "di_auto1.TestA">
+<property name = "b" ref = "b" />
+<property name = "c" ref = "c" />
+
+</bean>
+ -->
+<!-- 오토와이어링 : byName, byType -->
+<bean id = "b" class = "di_auto1.TestB"/>
+<bean id = "c" class = "di_auto1.TestC"/>
+<bean id = "a" class = "di_auto1.TestA" autowire = "byName"/>
+</beans>

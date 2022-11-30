@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+<property name="url" value="jdbc:mysql://localhost:3306/test"/>
+<property name="username" value="root"/>
+<property name="password" value="1234"/>
+</bean>
+
+
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+<property name="dataSource" ref="dataSource"/>
+</bean>
+
+<bean id="memberDao" class="member.Dao.MemberDaoImpl1">
+	<constructor-arg ref="jdbcTemplate" />
+</bean>
+
+<bean id="memberRegisterService" class="member.Service.MemberRegisterServiceImpl">
+	<constructor-arg ref="memberDao"/>
+</bean>
+
+<bean id="memberPrinterService" class="member.Service.MemberPrinterServiceImpl"/>
+<bean id ="memberListPrinterService" class="member.Service.MemberListPrinterServiceImpl">
+	<constructor-arg ref="memberDao"/>
+	<constructor-arg ref="memberPrinterService"/>
+</bean>
+
+<bean id="changePasswordService" class="member.Service.ChangePaswordServiceImpl">
+	<constructor-arg ref="memberDao"/>
+</bean>
+
+<bean id="deleteService" class="member.Service.MemberDeleteServiceImpl">
+	<constructor-arg ref="memberDao"/>
+</bean>
+
+
+<bean id ="memberUI" class="member.UI.MemberUI">
+	<property name="memberRegisterService" ref="memberRegisterService"/>
+	<property name="memberListPrinterService" ref="memberListPrinterService"/>
+	<property name="changePasswordService" ref="changePasswordService"/>
+	<property name="memberDeleteService" ref="deleteService"/>
+</bean>
+
+</beans>

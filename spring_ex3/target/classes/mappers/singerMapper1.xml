@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="singerMapper1">
+
+<!-- sql문을 작성하기 위해 태그를 지원 -->
+<select id="getSinger" resultType="mybatisExam.Singer">
+select * from inger_group where name = #{name}
+<!-- select * from singer_group where name = ? -->
+
+</select>
+<select id="getSingers" resultType="mabatisExam.Singer">
+select * from singer_group where member = #{member}
+</select>
+
+<select id="getSingerCount" resultType="int">
+select count(*) from singer_group
+</select>
+
+<insert id="insertSinger" parameterType="mybatisExam.Singer">
+insert into singer_group (name, member) values (#{name}, #{member})
+</insert>
+
+<update id="updateSinger">
+update singer_group set member=#{member} where name=#{name}
+</update>
+
+<delete id="deleteSinger">
+delete from singer_group where name=#{name}
+</delete>
+
+
+</mapper>
